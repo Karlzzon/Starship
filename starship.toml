@@ -1,0 +1,63 @@
+add_newline = false
+
+# Global prompt format - Adding OS to the left prompt
+format = """$os $directory $character"""
+right_format = """$all"""
+command_timeout = 1000
+
+# OS section
+[os]
+format = "[$symbol]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Windows = ""
+Ubuntu = ""
+
+# Character (command prompt character)
+[character]
+error_symbol = "[✗](bold red)"
+
+# Directory section
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style)"
+
+# Git branch section
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style)"
+symbol = "🌱"
+style = "bold yellow"
+
+# Git commit section
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+# Git state section
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style)'
+
+# Git status section
+[git_status]
+conflicted = "⚔️"
+ahead = "🏎️💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱🏎️💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️ ×${count}"
+stashed = "📦"
+modified = "📝 ×${count}"
+staged = "🗃️ ×${count}"
+renamed = "📛 ×${count}"
+deleted = "🗑️ ×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+# Package section
+[package]
+disabled = true
+
+# Node.js section
+[nodejs]
+disabled = true
