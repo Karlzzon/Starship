@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing Starship..."
-curl -sS https://starship.rs/install.sh | sh -- --y
+yes | curl -sS https://starship.rs/install.sh | sh
 
 echo "Moving starship.toml to ~/.config..."
 mkdir -p ~/.config
