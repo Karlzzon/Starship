@@ -3,15 +3,15 @@
 # Avsluta om ett kommando misslyckas
 set -e
 
-# Installera Starship
+# Installera Starship och svara "y" automatiskt
 echo "Installing Starship..."
-curl -sS https://starship.rs/install.sh | sh
+yes | curl -sS https://starship.rs/install.sh | sh
 
 # Kontrollera om starship.toml finns i aktuell katalog innan flytt
 if [ -f ./starship.toml ]; then
     echo "Moving starship.toml to ~/.config..."
     mkdir -p ~/.config
-    mv -f ./starship.toml ~/.config/
+    mv -f ~/dotfiles/starship.toml ~/.config/
 else
     echo "starship.toml not found in the current directory, skipping move."
 fi
