@@ -1,7 +1,7 @@
 add_newline = false
 
 # Global prompt format - Adding OS to the left prompt
-format = """$os $directory $character"""
+format = """$os $directory $git_branch $character"""
 right_format = """$all"""
 command_timeout = 1000
 
