@@ -14,5 +14,4 @@ else
     echo "Starship init already present in .bashrc."
 fi
 
-source ~/.bashrc
 echo "Installation complete!"
