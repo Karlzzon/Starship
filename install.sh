@@ -24,5 +24,17 @@ fi
 echo "Sourcing .bashrc..."
 source ~/.bashrc
 
+echo 'alias l="lsd -l --blocks=permission,name"
+alias la="lsd -la --blocks=permission,name"
+alias ll="lsd -la"
+alias lt="lsd -l --blocks=permission,date,name"
+alias lta="lsd -la --blocks=permission,date,name"
+alias lw="lsd -l --blocks=permission,size,name"
+alias lwa="lsd -la --blocks=permission,size,name"
+
+export LS_COLORS="di=34:ow=33" 
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"' >> ~/.bashrc
+
 # Bekräfta att installationen är klar
 echo "Installation complete!"
