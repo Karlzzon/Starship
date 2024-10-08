@@ -36,5 +36,7 @@ export LS_COLORS="di=34:ow=33"
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"' >> ~/.bashrc
 
+git clone https://github.com/Karlzzon/nvim.git ~/.config/
+
 # Bekräfta att installationen är klar
 echo "Installation complete!"
