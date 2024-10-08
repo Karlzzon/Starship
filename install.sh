@@ -40,3 +40,4 @@ git clone https://github.com/Karlzzon/nvim.git ~/.config/
 
 # Bekräfta att installationen är klar
 echo "Installation complete!"
+echo "Please install nvim, zoxide and lsd"
