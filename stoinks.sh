@@ -17,18 +17,15 @@ export LS_COLORS="di=34:ow=33"
 eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
-# Installera zoxide
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-
 # Installera lsd
-sudo apt install -y lsd
+sudo apt install -y lsd zoxide
 
 # Installera byggberoenden
 sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
 
 # Klona och bygg Neovim
 git clone https://github.com/neovim/neovim
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
+cd neovim && sudo make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
 
 # Klona Neovim-konfiguration
 git clone https://github.com/Karlzzon/nvim.git ~/.config/nvim
