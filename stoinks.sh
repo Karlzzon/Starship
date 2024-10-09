@@ -1,7 +1,3 @@
-curl -sS https://starship.rs/install.sh | sh -s -- --yes
-mkdir -p ~/.config
-mv -f ~/dotfiles/starship.toml ~/.config/
-
 echo  '
 # Aliases
 alias l="lsd -l --blocks=permission,name"
@@ -13,7 +9,6 @@ alias lw="lsd -l --blocks=permission,size,name"
 alias lwa="lsd -la --blocks=permission,size,name"
 
 export LS_COLORS="di=34:ow=33"
-eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
