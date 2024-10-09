@@ -1,3 +1,6 @@
+sudo apt-get update
+sudo apt -y upgrade
+
 echo  '
 # Aliases
 alias l="lsd -l --blocks=permission,name"
@@ -21,5 +24,6 @@ cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
 git clone https://github.com/Karlzzon/nvim.git ~/.config/nvim
+sleep 1m
 
 source ~/.bashrc
