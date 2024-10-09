@@ -14,13 +14,14 @@ alias lw="lsd -l --blocks=permission,size,name"
 alias lwa="lsd -la --blocks=permission,size,name"
 
 export LS_COLORS="di=34:ow=33"
+eval "$(starship init bash)
 eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-sudo apt install lsd
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh -s -- --yes
+sudo apt install -y lsd
 
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
