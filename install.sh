@@ -1,29 +1,30 @@
-#!/bin/bash
-
-# Felsökningsläge: loggar alla kommandon och stoppar vid fel
-set -ex
-
-# Installera Starship med --yes flaggan (ingen interaktiv prompt)
-echo "Installing Starship..."
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
-
-# Flytta starship.toml till ~/.config
-echo "Moving starship.toml to ~/.config..."
 mkdir -p ~/.config
 mv -f ~/dotfiles/starship.toml ~/.config/
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
-# Lägg till Starship init till .bashrc om det inte redan finns
-if ! grep -Fxq 'eval "$(starship init bash)"' ~/.bashrc; then
-    echo 'Adding Starship init to .bashrc...'
-    echo 'eval "$(starship init bash)"' >> ~/.bashrc
-else
-    echo "Starship init already present in .bashrc."
-fi
+echo  '
+# Aliases
+alias l="lsd -l --blocks=permission,name"
+alias la="lsd -la --blocks=permission,name"
+alias ll="lsd -la"
+alias lt="lsd -l --blocks=permission,date,name"
+alias lta="lsd -la --blocks=permission,date,name"
+alias lw="lsd -l --blocks=permission,size,name"
+alias lwa="lsd -la --blocks=permission,size,name"
 
-# Ladda om bashrc
-echo "Sourcing .bashrc..."
+export LS_COLORS="di=34:ow=33"
+eval "$(zoxide init bash)"
+' >> ~/.bashrc
+
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+sudo apt install lsd
+
+sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+git clone https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+
+git clone https://github.com/Karlzzon/nvim.git ~/.config/nvim
+
 source ~/.bashrc
-
-# Bekräfta att installationen är klar
-echo "Installation complete!"
-echo "Please install nvim, zoxide and lsd"
