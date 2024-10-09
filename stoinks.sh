@@ -3,7 +3,7 @@ sudo apt-get update
 sudo apt -y upgrade
 
 # Lägg till alias och zoxide till bashrc
-echo -e '
+echo  '
 # Aliases
 alias l="lsd -l --blocks=permission,name"
 alias la="lsd -la --blocks=permission,name"
@@ -18,7 +18,7 @@ eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
 # Installera zoxide
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh -s -- --yes
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Installera lsd
 sudo apt install -y lsd
