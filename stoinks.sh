@@ -12,7 +12,7 @@ export LS_COLORS="di=34:ow=33"
 eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh -s -- --yes
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 sudo apt install -y lsd
 
 sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
