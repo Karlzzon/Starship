@@ -1,7 +1,9 @@
+# Uppdatera systemet
 sudo apt-get update
 sudo apt -y upgrade
 
-echo  '
+# Lägg till alias och zoxide till bashrc
+echo -e '
 # Aliases
 alias l="lsd -l --blocks=permission,name"
 alias la="lsd -la --blocks=permission,name"
@@ -15,15 +17,21 @@ export LS_COLORS="di=34:ow=33"
 eval "$(zoxide init bash)"
 ' >> ~/.bashrc
 
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+# Installera zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh -s -- --yes
+
+# Installera lsd
 sudo apt install -y lsd
 
+# Installera byggberoenden
 sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
+
+# Klona och bygg Neovim
 git clone https://github.com/neovim/neovim
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
 
+# Klona Neovim-konfiguration
 git clone https://github.com/Karlzzon/nvim.git ~/.config/nvim
-sleep 1m
 
+# Ladda om bashrc
 source ~/.bashrc
