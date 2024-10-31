@@ -26,4 +26,3 @@ source ~/.bashrc
 
 # Bekräfta att installationen är klar
 echo "Installation complete!"
-echo "Please install nvim, zoxide and lsd"
